@@ -14,13 +14,6 @@ const (
 	dbname   = "users"
 )
 
-type UserInfo struct {
-	Id         int
-	First_name string
-	Last_name  string
-	Age        int
-}
-
 func main() {
 
 	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
