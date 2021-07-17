@@ -31,9 +31,14 @@ func main() {
 		panic("Could not connect to the Database")
 	}
 
-	// take the address of 'UserInfo{}'
+	// take the address of 'UserInfo{}', it also use to create table
 	db.AutoMigrate(&UserInfo{})
 
-	fmt.Println("Connection to the Databasecreated")
+	// create table
+	db.Migrator().CreateTable(&UserInfo{})
+	// Drop Table
+	db.Migrator().DropTable(&UserInfo{})
+
+	fmt.Println("Table created and Drop Table")
 
 }
