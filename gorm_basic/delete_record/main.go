@@ -39,7 +39,6 @@ func main() {
 	}
 	// take the address of variable UserInfo, also have id to which value to delete
 	db.Delete(&user)
-
 	fmt.Println("delete record")
 
 }
